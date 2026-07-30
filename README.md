@@ -1,121 +1,39 @@
-# Os-READER
-Os Reader
 # System Information Detector
 
-A cross-platform Python script that detects the operating system and displays basic system information, including the OS version, distribution, hardware architecture, hostname, and more.
+A dependency-free Python script that reports useful details about the computer it runs on. It supports Windows, Linux, and macOS, with additional Windows-specific information when available.
 
-## Features
+## Reported details
 
-- Detects Windows, Linux, and macOS
-- Displays operating system details
-- Identifies Linux distributions
-- Detects Windows editions
-- Displays macOS version
-- Shows system architecture and hostname
-- Requires only Python’s standard library
+- Operating system, edition/distribution, release, and kernel version
+- Hardware architecture, processor model, and logical CPU core count
+- Total and available memory
+- System-drive capacity and free space
+- Hostname, current user, and local IP address
+- System uptime
+- Python version and interpreter path
+- On Windows: display version, build number, and installation date
 
 ## Requirements
 
-- Python 3.7 or later
-- Windows, Linux, or macOS
+- Python 3
+- No third-party packages
 
-Check whether Python is installed:
+## Run
 
-```bash
-python --version
-```
+From this folder, run:
 
-On some Linux and macOS systems, use:
-
-```bash
-python3 --version
-```
-
-## Installation
-
-Clone or download this project:
-
-```bash
-git clone https://github.com/your-username/os-detector.git
-cd os-detector
-```
-
-Alternatively, download `os_detector.py` directly.
-
-## Usage
-
-### Windows
-
-```cmd
+```powershell
 python os_detector.py
 ```
 
-### Linux or macOS
+If `python` is not available on your PATH, run it with the full interpreter path instead:
 
-```bash
-python3 os_detector.py
+```powershell
+& "C:/Users/admin/Python311/python.exe" .\os_detector.py
 ```
 
-You can also make the script executable:
+## Notes
 
-```bash
-chmod +x os_detector.py
-./os_detector.py
-```
-
-## Example Output
-
-```text
-==================================================
-       SYSTEM INFORMATION DETECTOR
-==================================================
-Operating System: Linux (Linux)
-Linux Distribution: Ubuntu 22.04.3 LTS
-System Release:    5.15.0-86-generic
-Kernel Version:    #96-Ubuntu SMP
-Machine Hardware:  x86_64
-Hostname:          my-computer
-==================================================
-```
-
-## Creating a Windows Executable
-
-To create a standalone Windows executable, install PyInstaller:
-
-```cmd
-pip install pyinstaller
-```
-
-Build the executable:
-
-```cmd
-pyinstaller --onefile os_detector.py
-```
-
-The executable will be created in:
-
-```text
-dist/os_detector.exe
-```
-
-Run it by double-clicking the executable or from Command Prompt:
-
-```cmd
-dist\os_detector.exe
-```
-
-## Project Structure
-
-```text
-os-detector/
-├── os_detector.py
-└── README.md
-```
-
-## Privacy
-
-This script only reads local system information and displays it in the terminal. It does not send data over the network or modify system files.
-
-## License
-
-This project is provided for educational and personal use. You may modify and distribute it as needed.
+- The local IP address is the address associated with the computer hostname. On systems with VPNs or multiple network adapters, it may not be the address used for internet access.
+- Some operating-system details may show as `Unavailable` or `Unknown` if the OS does not provide them.
+- The script reads system information only; it does not modify system settings or send information anywhere.

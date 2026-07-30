@@ -1,4 +1,4 @@
-# 🖥️ System Information Detector
+# 🖥️ System Information Detector by LeCalmeleon, Sonny and Imniwaifiok-arch
 
 <p align="center">
 	<strong>A fast, dependency-free snapshot of the machine you are running on.</strong><br>
